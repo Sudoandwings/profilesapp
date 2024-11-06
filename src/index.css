@@ -1,68 +1,85 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --primary-color: #ffffff;
+  --secondary-color: #888888;
+  --accent-color: #6c63ff; /* New accent color */
+  --background-color: #1e1e2f; /* Dark background for contrast */
 
-  color-scheme: light dark;
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: var(--background-color); /* Apply background color */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  transition: all 0.3s ease; /* Smooth transitions */
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+/* Card Styling */
+.card {
+  padding: 2em;
+  background-color: rgba(255, 255, 255, 0.05); /* Semi-transparent background */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Light border */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-a:hover {
-  color: #535bf2;
+
+.card:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Typography */
+.read-the-docs {
+  color: var(--secondary-color);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: color 0.3s ease;
+}
+
+.read-the-docs:hover {
+  color: var(--accent-color);
+}
+
+/* Grid Layout for Boxes */
+.box {
+  padding: 1.5em;
+  background-color: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.box:hover {
+  transform: translateY(-5px); /* Subtle lift on hover */
+  background-color: rgba(255, 255, 255, 0.1); /* Slightly brighter on hover */
+}
+
+/* Grid Positioning */
+.box:nth-child(3n + 1) {
+  grid-column: 1;
+}
+.box:nth-child(3n + 2) {
+  grid-column: 2;
+}
+.box:nth-child(3n + 3) {
+  grid-column: 3;
+}
+
+/* Additional Styling for :root */
+:root {
+  scroll-behavior: smooth; /* Smooth scrolling */
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+  background-color: var(--background-color); /* Set a darker background for contrast */
+  color: var(--primary-color);
 }
